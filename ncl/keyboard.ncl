@@ -1,11 +1,12 @@
-atrix = {
-    cols = [32, 14, 15, 16, 17, 12, 13, 35, 34, 33],
-    rows = [10, 11, 31, 30]
-  },
+let { ColToRowKey, .. } = import "./fak/keyboard.ncl" in
+let { CH552T, .. } = import "fak/mcus.ncl" in
+
+{
+  mcu = CH552T,
   usb_dev = {
-    vendor_id = 48815, # 0xBEAF
-    product_id = 1,
-    product_ver = 1, # 0x0001
+    vendor_id = 51966,  # 0xCAFE
+    product_id = 47806, # 0xBABE
+    product_ver = 256,  # 0x0100
   },
   keys =
     let M = ColToRowKey in
